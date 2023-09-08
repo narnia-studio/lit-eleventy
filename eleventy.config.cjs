@@ -6,15 +6,18 @@ module.exports = eleventyConfig => {
 
 	eleventyConfig.addPassthroughCopy('./src/fonts');
 	eleventyConfig.addPassthroughCopy('./src/images');
+	eleventyConfig.addPassthroughCopy('./src/js');
+	eleventyConfig.addWatchTarget('.src/js');
+	// eleventyConfig.addPassthroughCopy('./src/components');
 
 	// config.addFilter('md', require('./src/filters/md.js'));
-  eleventyConfig.addPlugin(litPlugin, {
-    mode: 'worker',
-    componentModules: [
-    //   'js/demo-greeter.js',
-    //   'js/other-component.js',
-    ],
-  });
+	eleventyConfig.addPlugin(litPlugin, {
+		mode: 'worker',
+		componentModules: [
+			  './src/js/my-button.mjs',
+			//   'js/other-component.js',
+		]
+	});
 
 	return {
 		markdownTemplateEngine: 'njk',

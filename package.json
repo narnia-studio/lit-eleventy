@@ -1,14 +1,17 @@
 {
 	"name": "danielcandeira.com",
 	"version": "1.0.0",
-	"engines": { "node": "16.x" },
+	"engines": {
+		"node": "16.x"
+	},
 	"description": "Eleventy website",
 	"main": ".eleventy.js",
+	"type": "module",
 	"scripts": {
-		"start": "concurrently 'npm run serve' 'npm run css -- --watch'",
+		"start": "concurrently \"npm run serve\" \"npm run css -- --watch\"",
 		"serve": "npx eleventy --serve",
-		"css": "npx postcss src/css/global.css -o dist/css/global.css",
-		"production": "NODE_ENV=production npx eleventy && NODE_ENV=production npm run css"
+		"css": "npx postcss src/assets/css/global.css -o dist/css/global.css",
+		"production": " npx eleventy &&  npm run css"
 	},
 	"keywords": [],
 	"author": "",
@@ -22,11 +25,12 @@
 		"postcss-import": "^15.1.0",
 		"postcss-import-ext-glob": "^2.1.1",
 		"postcss-js": "^4.0.1",
-		"prettier": "^2.8.4",
+		"prettier": "^2.8.8",
 		"slugify": "^1.6.5",
-    "tailwindcss": "^3.2.7"
+		"tailwindcss": "^3.2.7"
 	},
 	"dependencies": {
-    "@lit-labs/eleventy-plugin-lit": "^1.0.1"
+		"@lit-labs/eleventy-plugin-lit": "^1.0.1",
+		"lit": "^2.8.0"
 	}
 }
